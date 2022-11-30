@@ -1,5 +1,5 @@
-class Carrito {
+class Boxes {
 
 }
 
-module.exports = Carrito
+module.exports = Boxes
