@@ -7,7 +7,7 @@ export async function createClient(req, res) {
     let documento = null;
 
     try {
-        const documento = await clientModel.create(cliente)
+        documento = await clientModel.create(cliente)
     } catch (error) {
         res.status(400)
         res.json(error.message)
