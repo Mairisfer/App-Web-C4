@@ -4,7 +4,7 @@ export async function createClient(req, res) {
 
     const cliente = req.body;
 
-    let documento = null;
+    let documento;
 
     try {
         documento = await clientModel.create(cliente)
@@ -21,7 +21,7 @@ export async function createClient(req, res) {
 
 export async function readClient(req, res) {
     const { username } = req.params
-    let documento = null;
+    let documento;
 
     try {
         documento = await clientModel.find({
@@ -39,32 +39,31 @@ export async function readClient(req, res) {
 
 
 export async function updateClient(req, res) {
-    const { id } = req.params
-    let documento = null;
+    const {username} = req.params
+    const { cambios } = req.body
+    
+    let documento;
 
     try {
-        documento = await clientModel.findOne({
-            "_id": id
-        })
+        documento = await clientModel.updateOne({
+            "username": username
+        }, cambios)
     } catch (error) {
         res.status(400)
         res.json(error.message)
         return;
     }
 
-    documento.age = 999
-    documento.save()
-
     res.status(200)
     res.json(documento)
 }
 export async function deleteClient(req, res) {
-    const { id } = req.params
-    let documento = null;
+    const { username } = req.params
+    let documento;
 
     try {
         documento = await clientModel.findOneAndDelete({
-            "_id": id
+            "username": username
         })
     } catch (error) {
         res.status(400)
