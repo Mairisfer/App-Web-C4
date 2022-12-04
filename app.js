@@ -1,7 +1,7 @@
 import express from "express";
 import mongoose from 'mongoose';
 import clientRouter from "./routes/clientRouter.js";
-
+import boxesRouter from "./routes/boxesRouter.js";
 
 const app=express();
 const PORT = process.env.PORT || 8089
@@ -19,7 +19,7 @@ mongoose.connect("mongodb+srv://DBAppBoxes:usuario@dbappboxes.ozqotmo.mongodb.ne
 
 app.use(express.json())
 app.use("/client", clientRouter)
-
+app.use('/boxes', boxesRouter)
 /*
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
