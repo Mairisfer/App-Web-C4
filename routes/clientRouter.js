@@ -1,16 +1,18 @@
 import express from "express";
 import { createClient, deleteClient, readClient, updateClient } from "../controllers/clientController.js";
+import mwPruebas from "../Middelwares/mwPruebas.js";
+import validateToken from "../Middelwares/validateToken.js";
 
 const clientRouter = express.Router()
 
 //Crear
 //POST
-clientRouter.post("/", (req, res) => {
+clientRouter.post("/", mwPruebas, (req, res) => {
     createClient(req, res)
 })
 //Leer
 //GET
-clientRouter.get("/:username", (req, res) => {
+clientRouter.get("/", validateToken, (req, res) => {
     readClient(req, res)
 })
 //Actualizar

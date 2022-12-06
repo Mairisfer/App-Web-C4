@@ -1,8 +1,15 @@
 import clientModel from "../models/clientModel.js";
+import bcrypt from "bcrypt"
 
 export async function createClient(req, res) {
 
     const cliente = req.body;
+    const { password } = cliente
+    
+    const salt = await bcrypt.genSalt(10)
+    const passwordencrypt = await bcrypt.hash(password, salt);
+
+    cliente.password = passwordencrypt
 
     let documento;
 
@@ -71,9 +78,7 @@ export async function deleteClient(req, res) {
         return;
     }
 
-    documento.age = 999
-    documento.save()
-
+    
     res.status(200)
     res.json(documento)
 }

@@ -1,6 +1,8 @@
 import express from "express";
 import mongoose from 'mongoose';
+import mwPruebas from "./Middelwares/mwPruebas.js";
 import clientRouter from "./routes/clientRouter.js";
+import loginRouter from "./routes/loginRouter.js";
 
 
 const app=express();
@@ -19,6 +21,8 @@ mongoose.connect("mongodb+srv://DBAppBoxes:usuario@dbappboxes.ozqotmo.mongodb.ne
 
 app.use(express.json())
 app.use("/client", clientRouter)
+app.use(mwPruebas)
+app.use("/login", loginRouter)
 
 /*
 app.use(express.urlencoded({extended: true}))
@@ -29,4 +33,6 @@ app.use('/score', scoreRouter)
 app.use('/boxes', boxesRouter)
 app.use('/client', clientRouter)
 app.use('/reservations', reservationsRouter)
+
+app.use("/test", testRouter)
 */
