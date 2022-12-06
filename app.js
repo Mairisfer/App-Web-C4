@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import mwPruebas from "./Middelwares/mwPruebas.js";
 import clientRouter from "./routes/clientRouter.js";
 import loginRouter from "./routes/loginRouter.js";
-
+import boxesRouter from "./routes/boxesRouter.js";
 
 const app=express();
 const PORT = process.env.PORT || 8089

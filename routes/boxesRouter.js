@@ -1,23 +1,24 @@
 import express from "express";
-import Boxes from "../controllers/boxesController";
+import {createBox,readBox,updateBox,deleteBox} from "../controllers/boxesController.js";
 
 const boxesRouter = express.Router()
 
-boxesRouter.get("/", (req, res) =>{
-
-})
-
 boxesRouter.post("/", (req, res) =>{
-
+    createBox(req, res)
 })
 
-boxesRouter.put("/", (req, res) =>{
-
+boxesRouter.get("/:idBox", (req, res) =>{
+    readBox(req, res)
 })
 
-boxesRouter.delete("/", (req, res) =>{
-
+boxesRouter.put("/:idBox", (req, res) =>{
+    updateBox(req, res)
 })
+
+boxesRouter.delete("/:idBox", (req, res) =>{
+    deleteBox(req, res)
+})
+
 
 
 export default boxesRouter;
