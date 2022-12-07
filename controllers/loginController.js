@@ -14,7 +14,7 @@ export default async function login(req, res) {
     }
 
     const user = await clientModel.findOne({
-        "name": username
+        "username": username
     })
     
     if (user == null) {

@@ -27,11 +27,11 @@ export async function createClient(req, res) {
 }
 
 export async function readClient(req, res) {
-    const { username } = req.params
+    const { username } = req
     let documento;
 
     try {
-        documento = await clientModel.find({
+        documento = await clientModel.findOne({
             "username": username
         })
     } catch (error) {

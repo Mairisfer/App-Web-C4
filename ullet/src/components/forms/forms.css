@@ -1,0 +1,17 @@
+.boton {
+  padding: 0.5rem;
+  border: none;
+  background-color: cadetblue;
+  color: azure;
+}
+
+.boton:hover {
+  background-color: rgb(9, 61, 62);
+  cursor: pointer;
+}
+
+.input{
+    text-align: center;
+    border: none;
+    padding: 0.2rem;
+}

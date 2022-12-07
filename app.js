@@ -4,7 +4,6 @@ import mwPruebas from "./Middelwares/mwPruebas.js";
 import clientRouter from "./routes/clientRouter.js";
 import loginRouter from "./routes/loginRouter.js";
 import boxesRouter from "./routes/boxesRouter.js";
-import reservationsRouter from "./routes/reservationsRouter.js";
 
 const app=express();
 const PORT = process.env.PORT || 8089
@@ -24,7 +23,6 @@ app.use(express.json())
 app.use("/client", clientRouter)
 app.use(mwPruebas)
 app.use("/login", loginRouter)
-app.use("/reservation", reservationsRouter)
 
 /*
 app.use(express.urlencoded({extended: true}))
