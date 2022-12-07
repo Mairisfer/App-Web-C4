@@ -23,6 +23,8 @@ app.use(express.json())
 app.use("/client", clientRouter)
 app.use(mwPruebas)
 app.use("/login", loginRouter)
+app.use('/reservations', reservationsRouter)
+app.use('/boxes', boxesRouter)
 
 /*
 app.use(express.urlencoded({extended: true}))
@@ -30,9 +32,9 @@ app.use(express.json())
 
 
 app.use('/score', scoreRouter)
-app.use('/boxes', boxesRouter)
+
 app.use('/client', clientRouter)
-app.use('/reservations', reservationsRouter)
+
 
 app.use("/test", testRouter)
 */
