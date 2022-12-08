@@ -6,9 +6,11 @@ import Gap from "./utils/Gap";
 
 function Login() {
   return (
-    <Flex padding="2rem" borderRadius="1rem">
-      <h1>Palcos</h1>
-      <Gap direction="vertical">1rem</Gap>
+    <Flex padding="4rem" borderRadius="1rem">
+      <h1>TuPalco</h1>
+      <Gap direction="vertical">2rem</Gap>
+      <h4>Todo puede ser mejor cuando lo ves desde el lugar correcto</h4>
+      <Gap direction="vertical">2rem</Gap>
       <Input>User Name</Input>
       <Gap direction="vertical">0.5rem</Gap>
       <Input type="password">Password</Input>

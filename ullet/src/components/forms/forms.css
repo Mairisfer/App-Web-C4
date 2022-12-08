@@ -6,12 +6,12 @@
 }
 
 .boton:hover {
-  background-color: rgb(9, 61, 62);
+  background-color: rgb(5, 48, 48);
   cursor: pointer;
 }
 
-.input{
-    text-align: center;
-    border: none;
-    padding: 0.2rem;
+.input {
+  text-align: center;
+  border: none;
+  padding: 0.4rem;
 }
