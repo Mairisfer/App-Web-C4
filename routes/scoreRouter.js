@@ -4,7 +4,7 @@ import Score from "../controllers/scoreController";
 const scoreRouter = express.Router()
 
 //Post
-scoreRouter.get("/", (req, res) =>{
+scoreRouter.get("/:idScore", (req, res) =>{
 createScore(req, res)
 
 })
@@ -15,12 +15,12 @@ readScore(req, res)
 })
 
 //Update
-scoreRouter.put("/", (req, res) =>{
+scoreRouter.put("/:idScore", (req, res) =>{
 updateScore(req, res)
 })
 
 //Delete
-scoreRouter.delete("/", (req, res) =>{
+scoreRouter.delete("/:idScore", (req, res) =>{
 deleteScore(req, res)
 })
 
