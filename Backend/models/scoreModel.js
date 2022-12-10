@@ -1,3 +1,5 @@
+/*
+
 import mongoose from "mongoose";
 
 const scoreModel = mongoose.Schema({
@@ -8,3 +10,5 @@ const scoreModel = mongoose.Schema({
 })
 
 export default mongoose.model("score", scoreModel)
+
+*/

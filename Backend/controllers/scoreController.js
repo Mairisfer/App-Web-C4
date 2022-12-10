@@ -1,3 +1,5 @@
+
+/*
 import scoreModel from "../scoreModel.js";
 
 export async function createScore(req, res) {
@@ -70,10 +72,4 @@ export async function deleteScore(req, res) {
     res.status(200)
     res.json(documento)
 }
-
-
-/*class Score {
-
-}
-
-module.exports = Score*/
+*/
