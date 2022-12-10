@@ -5,6 +5,7 @@ import clientRouter from "./routes/clientRouter.js";
 import loginRouter from "./routes/loginRouter.js";
 import boxesRouter from "./routes/boxesRouter.js";
 import scoreRouter from "./routes/scoreRouter.js";
+import reservationsRouter from "./routes/reservationsRouter.js"
 
 const app=express();
 const PORT = process.env.PORT || 8089
@@ -26,9 +27,10 @@ app.use(mwPruebas)
 app.use("/login", loginRouter)
 app.use('/reservations', reservationsRouter)
 app.use('/boxes', boxesRouter)
-app.use('/score', scoreRouter)
+
 
 /*
+app.use('/score', scoreRouter)
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 
