@@ -46,8 +46,8 @@ export async function readClient(req, res) {
 
 
 export async function updateClient(req, res) {
-    const {username} = req.params
-    const { cambios } = req.body
+    const { username } = req.params
+    const  cambios = req.body
     
     let documento;
 

@@ -4,7 +4,7 @@ import mwPruebas from "./Middelwares/mwPruebas.js";
 import clientRouter from "./routes/clientRouter.js";
 import loginRouter from "./routes/loginRouter.js";
 import boxesRouter from "./routes/boxesRouter.js";
-import scoreRouter from "./routes/scoreRouter.js";
+//import scoreRouter from "./routes/scoreRouter.js";
 import reservationsRouter from "./routes/reservationsRouter.js"
 
 const app=express();

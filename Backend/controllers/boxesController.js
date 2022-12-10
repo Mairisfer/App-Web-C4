@@ -39,12 +39,14 @@ export async function readBox(req, res) {
 
 export async function updateBox(req, res) {
     const { idBox } = req.params
-    const { changeBox } = req.body
-    
+    const  changeBox  = req.body
+    console.log(changeBox)
     let documento;
 
     try {
-        documento = await boxesModel.updateOne({"idBox": idBox}, changeBox)
+        documento = await boxesModel.updateOne({
+            "idBox": idBox
+        }, changeBox)
     } catch (error) {
         res.status(400)
         res.json(error.message)

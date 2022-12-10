@@ -37,12 +37,12 @@ export async function readReservation(req, res) {
 
 export async function updateReservation(req, res) {
     const { idReserv } = req.params
-    const { changeReserv } = req.body
+    const  changeReserv  = req.body
     
     let documento;
 
     try {
-        documento = await reservationModel.updateOne({"idReservation": idReserv}, changeReserv)
+        documento = await reservationModel.updateOne({"idReserv": idReserv}, changeReserv)
     } catch (error) {
         res.status(400)
         res.json(error.message)
