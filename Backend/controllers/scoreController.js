@@ -1,11 +1,9 @@
-
-/*
-import scoreModel from "../scoreModel.js";
+import scoreModel from "../models/scoreModel.js";
 
 export async function createScore(req, res) {
 
     const score = req.body;
-
+    //console.log(score);
     let documento;
 
     try {
@@ -25,7 +23,7 @@ export async function readScore(req, res) {
 
     try {
         documento = await scoreModel.find({
-            "idScore": idScore
+            "_idScore": idScore
         })
     } catch (error) {
         res.status(400)
@@ -39,12 +37,12 @@ export async function readScore(req, res) {
 
 export async function updateScore(req, res) {
     const { idScore } = req.params
-    const { changeScore } = req.body
+    const  changeScore  = req.body
     
     let documento;
 
     try {
-        documento = await scoreModel.updateOne({"idScore": idScore}, changeScore)
+        documento = await scoreModel.updateOne({"_idScore": idScore}, changeScore)
     } catch (error) {
         res.status(400)
         res.json(error.message)
@@ -72,4 +70,4 @@ export async function deleteScore(req, res) {
     res.status(200)
     res.json(documento)
 }
-*/
+
