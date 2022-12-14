@@ -59,7 +59,7 @@ export async function deleteScore(req, res) {
 
     try {
         documento = await scoreModel.findOneAndDelete({
-            "idscore": idScore
+            "_idscore": idScore
         })
     } catch (error) {
         res.status(400)
