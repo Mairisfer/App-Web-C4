@@ -1,7 +1,8 @@
 import mongoose from "mongoose";
 import genKey from "../utils/keyGeneration.js";
 
-const userShema = mongoose.Schema({
+
+const userShema = new mongoose.Schema({
     "name": { type: String, minlength:6, maxlength:30, required: true },
     "username": { type: String, minlength: 5, maxlength: 12, required: true, unique: true },
     "password": { type: String, minlength: 5, required: true },
