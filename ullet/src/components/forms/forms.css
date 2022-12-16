@@ -1,18 +1,45 @@
-.boton {
-  padding: 0.5rem;
-  border: none;
-  background-color: cadetblue;
-  color: azure;
-  
+.fill-button,
+.wire-button {
+  font-weight: bold;
+  padding: 0.5rem 2.5rem;
+  border: solid;
+  border-radius: calc(infinity * 0.5px);
+  cursor: pointer;
+  background-color: transparent;
+  transition: 0.2s;
 }
 
+.fill-button {
+  background-color: var(--enf-color);
+  border: none;
+  color: white;
+  font-family: "Work Sans", sans-serif;
+}
+
+.wire-button {
+  background-color: transparent;
+  border: solid;
+  border-color: rgb(12, 69, 66);
+  box-shadow: 0px 0px 5px rgba(49, 119, 46, 0.2);
+  font-family: "Work Sans", sans-serif;
+}
+
+.wire-button:hover {
+  background-color: var(--main-color);
+  color: azure;
+  font-family: "Work Sans", sans-serif;
+}
+
+
+
 .boton:hover {
-  background-color: rgb(5, 48, 48);
+  background-color: rgb(11, 79, 79);
   cursor: pointer;
+  border: none;
 }
 
 .input {
-  text-align: center;
+  text-align: left;
   border: none;
   padding: 0.4rem;
 }
