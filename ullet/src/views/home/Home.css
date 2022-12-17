@@ -1,5 +1,5 @@
 .grid {
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 2fr 2fr;
 }
 
 .girl img {
@@ -7,7 +7,7 @@
 }
 
 .headline {
-  margin-top: 8rem;
+  margin-top: 2rem;
 }
 
 .supporting {

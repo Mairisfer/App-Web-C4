@@ -20,7 +20,7 @@ body * {
 }
 
 h1 {
-  font-size: 36px;
+  font-size: 46px;
   font-family: "Work Sans", sans-serif;
 }
 
@@ -30,13 +30,12 @@ h2 {
 }
 
 b {
-    font-size: inherit;
+  font-size: inherit;
 }
 
 b,
-
 a {
-    color: var(--main-color);
+  color: var(--main-color);
 }
 
 p {
@@ -47,13 +46,6 @@ p {
 ul {
   list-style: none;
   font-family: "Work Sans", sans-serif;
-}
-
-.container {
-  /*background-color: rgb(240, 244, 244);*/
-  max-width: 80rem;
-  margin: 0 auto;
-  padding: 1rem;
 }
 
 .flex {
@@ -69,26 +61,28 @@ ul {
 }
 
 .grid-col-span-2 {
-    grid-column: span 2;
+  grid-column: span 2;
 }
 
 .grid-col-span-3 {
-    grid-column: span 3;
+  grid-column: span 3;
 }
 
 .container {
-    max-width: 80rem;
-    padding: 1rem;
-    margin: 0 auto;
+  max-width: 80rem;
+  padding: 2rem;
+  margin: 0 auto;
+  align-items: center;
+
 }
 
 .card {
-    display: flex;
+  display: flex;
 
-    border-radius: var(--default-radius);
+  border-radius: var(--default-radius);
 
-    box-shadow: var(--default-shadow);
+  box-shadow: var(--default-shadow);
 
-    padding: 2rem;
-    gap: 1rem;
+  padding: 2rem;
+  gap: 1rem;
 }

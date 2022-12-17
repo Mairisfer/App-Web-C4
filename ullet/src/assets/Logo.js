@@ -1,15 +1,14 @@
 import React from "react";
-import "./Logo.css"
+import "./Logo.css";
 import logo from "./logo.png";
 
 function Logo(props) {
-
-  const { size, showText } = props
+  const { showText = true } = props;
 
   const style = {
-    width: size,
-    height: size
-  }
+    width: "149px",
+    height: "139px",
+  };
 
   return (
     <div className="flex logo">

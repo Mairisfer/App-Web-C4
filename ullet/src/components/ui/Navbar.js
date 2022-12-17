@@ -11,8 +11,8 @@ function Navbar() {
         <ul className="menu flex container">
           <li>
             <Link to="/">
-              <Logo size="95px" showText={true} />
-            </Link>            ¨
+              <Logo size="55px" showText={true} />
+            </Link>
           </li>
           {/*<li>
             <Link to="/">

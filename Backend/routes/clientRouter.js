@@ -5,19 +5,25 @@ import {
   readClient,
   updateClient,
 } from "../controllers/clientController.js";
-import mwPruebas from "../Middelwares/mwPruebas.js";
-import validateToken from "../Middelwares/validateToken.js";
+import validatePassword from "../Middelwares/validatePassword.js";
 
 const clientRouter = express.Router();
 
-//Crear
+clientRouter.post("/", validatePassword, createClient);
+clientRouter.get("/", readClient);
+clientRouter.patch("/", updateClient);
+clientRouter.delete("/", deleteClient);
+
+export default clientRouter;
+
+/*Crear
 //POST
 clientRouter.post("/", mwPruebas, (req, res) => {
   createClient(req, res);
 });
 //Leer
 //GET
-clientRouter.get("/", validateToken, (req, res) => {
+clientRouter.get("/", tokenGeneration, (req, res) => {
   readClient(req, res);
 });
 //Actualizar
@@ -30,5 +36,4 @@ clientRouter.patch("/:username", (req, res) => {
 clientRouter.delete("/:username", (req, res) => {
   deleteClient(req, res);
 });
-
-export default clientRouter;
+*/

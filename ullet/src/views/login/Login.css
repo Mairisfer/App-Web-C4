@@ -14,13 +14,17 @@
 
 .login .form {
   max-width: 25rem;
-  margin: 1rem auto;
+  margin: 3rem auto;
   flex-direction: column;
   gap: 2rem;
 }
 
 .login .register {
   max-width: 25rem;
-  margin: 0 auto;
+  margin: 2rem auto;
   justify-content: center;
+}
+
+.login .fill-button {
+    width: 100%;
 }
