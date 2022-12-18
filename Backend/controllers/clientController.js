@@ -1,10 +1,30 @@
-import clientModel from "../models/clientModel.js";
 import bcrypt from "bcrypt";
+import clientModel from "../models/clientModel.js";
+import { genToken } from "../modules/tokenGeneration.js";
 
 export async function createClient(req, res) {
-  const cliente = req.body;
-  const { password } = cliente;
+  try {
+    const { username } = req.body;
+    let { password } = username;
 
+    password = await bcrypt.hash(password, 10);
+    username.password = password;
+
+    const document = await clientModel.create(username);
+
+    res.status(201).json(document);
+  } catch (error) {
+    res.status(400).json(error.message);
+  }
+}
+
+export function readClient(req, res) {}
+
+export function updateClient(req, res) {}
+
+export function deleteClient(req, res) {}
+
+/*
   if (password == null) {
     res.sendStatus(400);
     return;
@@ -86,4 +106,4 @@ export async function deleteClient(req, res) {
 
   res.status(200);
   res.json(documento);
-}
+}*/

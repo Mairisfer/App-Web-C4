@@ -1,15 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 import "./assets/global.css";
 import Navbar from "./components/ui/Navbar";
-
+import { TokenProvider } from "./contexts/TokenContext";
+import { UserProvider } from "./contexts/UserContext";
 //import Boton from "./components/forms/Boton";
-import Login from "./views/login/Login";
 import Home from "./views/home/Home";
+import Login from "./views/login/Login";
 import NewClient from "./views/register/NewClient";
-import Clients from "./views/Clients";
 import ClientPanel from "./views/panel/ClientPanel";
+
+//import ClientPanel from "./views/panel/ClientPanel";
 
 function App() {
   //const [view, setView] = useState(<Home></Home>);
@@ -19,12 +21,37 @@ function App() {
         <Route path="/" element={<Home />} />
       </Route>
 
-      <Route path="/login" element={<Login></Login>}></Route>
-      <Route path="/Clients" element={<Clients></Clients>}></Route>      
-      <Route path="registro" element={<NewClient></NewClient>}></Route>
-      <Route path="/client-panel" element={<ClientPanel></ClientPanel>}></Route>
+      <Route
+        path="/login"
+        element={
+          <TokenProvider>
+            <UserProvider>
+              <Login />
+            </UserProvider>
+          </TokenProvider>
+        }
+      ></Route>
+      <Route
+        path="/clients"
+        element={
+          <TokenProvider>
+            <UserProvider>
+              <ClientPanel />
+            </UserProvider>
+          </TokenProvider>
+        }
+      />
+      <Route
+        path="/registro"
+        element={
+          <TokenProvider>
+            <UserProvider>
+              <NewClient />
+            </UserProvider>
+          </TokenProvider>
+        }
+      />
     </Routes>
   );
 }
-
 export default App;
