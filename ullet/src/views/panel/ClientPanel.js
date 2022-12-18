@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import TokenContext from "../../contexts/TokenContext";
-import { getTransactions } from "../../services/TransactionService";
-import Transaction from "./Transaction";
+import { getReservations, } from "../../services/ReservationsService";
 import "./ClientPanel.css";
+import Reservation from "./Reservations";
 
 function ClientPanel() {
   const { token } = useContext(TokenContext);
@@ -17,7 +17,7 @@ function ClientPanel() {
     }
 
     async function fetchData() {
-      const documents = await getTransactions(token);
+      const documents = await getReservations(token);
       setDocuments(documents);
     }
 
@@ -27,16 +27,16 @@ function ClientPanel() {
   return (
     <section className="client-panel">
       <div className="container">
-        <div className="balance card flex">
+        <div className="Estado de mi reserva">
           <h1>Mis Reservas: </h1>
           <p> VIP </p>
         </div>
 
         <h1>Historial de Reservas</h1>
 
-        <div className="transactions card">
+        <div className="Historico de reservas">
           {documents.map((document) => (
-            <Transaction data={document} key={document._id} />
+            <Reservation data={document} key={document._id} />
           ))}
         </div>
       </div>
