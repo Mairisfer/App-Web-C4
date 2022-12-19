@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 
-import Transaction from "./Transaction";
-import "./ClientPanel.css";
+import ShowPalcos from "./ShowPalcos";
+import "./BoxesPanel.css";
 
-function ClientPanel() {
+function BoxesPanel() {
   async function fetchData() {
-    const res = await fetch("http://localhost:8089/api/reservations");
+    const res = await fetch("http://localhost:8089/api/boxes/");
     const documents = await res.json();
     setDocuments(documents);
     console.log(documents);
@@ -21,17 +21,17 @@ function ClientPanel() {
     <section className="user-panel">
       <div className="container">
         <div className="balance card flex">
-          <h1>Reservaciones :</h1>
+          <h1>Palcos:</h1>
           <p>Bienvenido</p>
         </div>
 
         <div className="transactions card">
           {documents.map((document) => (
-            <Transaction data={document} key={document._id} />
+            <ShowPalcos data={document} key={document._id} />
           ))}
         </div>
       </div>
     </section>
   );
 }
-export default ClientPanel;
+export default BoxesPanel;

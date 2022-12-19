@@ -3,14 +3,17 @@ import { Routes, Route } from "react-router-dom";
 
 import "./assets/global.css";
 import Navbar from "./components/ui/Navbar";
+import NavbarLog from "./components/ui/NavbarLog";
 import { TokenProvider } from "./contexts/TokenContext";
 import { UserProvider } from "./contexts/UserContext";
 //import Boton from "./components/forms/Boton";
 import Home from "./views/home/Home";
 import Login from "./views/login/Login";
 import NewClient from "./views/register/NewClient";
+
 import ClientPanel from "./views/panel/ClientPanel";
 
+import BoxesPanel from "./views/boxes/Boxes";
 //import ClientPanel from "./views/panel/ClientPanel";
 
 function App() {
@@ -31,18 +34,32 @@ function App() {
           </TokenProvider>
         }
       ></Route>
+      <Route element={<NavbarLog />}>
+        <Route
+          path="/clients"
+          element={
+            <TokenProvider>
+              <UserProvider>
+                <ClientPanel />
+              </UserProvider>
+            </TokenProvider>
+          }
+        />
+      </Route>
+      <Route element={<NavbarLog />}>
+        <Route
+          path="/boxes"
+          element={
+            <TokenProvider>
+              <UserProvider>
+                <BoxesPanel />
+              </UserProvider>
+            </TokenProvider>
+          }
+        />
+      </Route>
       <Route
-        path="/clients"
-        element={
-          <TokenProvider>
-            <UserProvider>
-              <ClientPanel />
-            </UserProvider>
-          </TokenProvider>
-        }
-      />
-      <Route
-        path="/registro"
+        path="/register"
         element={
           <TokenProvider>
             <UserProvider>

@@ -1,7 +1,7 @@
 export async function login(username, password) {
   const res = await fetch("http://localhost:8089/api/login/", {
     headers: {
-      user: username,
+      username: username,
       password: password,
     },
   });

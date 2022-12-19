@@ -1,9 +1,10 @@
-import dotenv from "dotenv";
+//import dotenv from "dotenv";
 import jwt from "jsonwebtoken";
 
-dotenv.config();
+//dotenv.config();
 
-const privateKey = process.env.PRIVATE_KEY;
+const privateKey =
+  "d598a01a32a72750581370261ef554a717d21a4dc4cf3f125edbe62cbb85f68388d6ad25f028035d6ff6b7e086ab0f81505e694045ce6ad94d88a96838658933";
 
 export function genToken(element) {
   const token = jwt.sign(element, privateKey);
@@ -13,6 +14,7 @@ export function genToken(element) {
 export function validateToken(req, res, next) {
   try {
     const { token } = req.headers;
+    console.log(token);
     const value = jwt.verify(token, privateKey);
     req.value = value;
     next();
