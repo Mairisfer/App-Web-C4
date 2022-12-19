@@ -59,6 +59,16 @@ function App() {
         />
       </Route>
       <Route
+        path="/clients"
+        element={
+          <TokenProvider>
+            <UserProvider>
+              <ClientPanel />
+            </UserProvider>
+          </TokenProvider>
+        }
+      />
+      <Route
         path="/register"
         element={
           <TokenProvider>
