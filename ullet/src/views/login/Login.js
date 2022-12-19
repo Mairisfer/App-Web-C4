@@ -19,14 +19,14 @@ function Login() {
 
   async function onButtonClick(event) {
     event.preventDefault();
-    console.log(username);
-    console.log(password);
+    //console.log(username);
+    //console.log(password);
     const token = await login(username, password);
 
     if (token) {
       setToken(token);
       setUser({ name: username });
-      navigate("/panel");
+      navigate("/clients");
     } else {
       alert("Password incorrecto");
     }
@@ -56,7 +56,9 @@ function Login() {
             Password
           </Input>
 
-          <Boton onClick={onButtonClick} style="fill">Login</Boton>
+          <Boton onClick={onButtonClick} style="fill">
+            Login
+          </Boton>
         </form>
         <div className="register card">
           <p>

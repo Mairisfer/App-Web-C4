@@ -1,5 +1,5 @@
 export default function validatePassword(req, res, next) {
-  const { password } = req.body.username;
+  const { password } = req.body.user;
 
   const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,}$/;
 

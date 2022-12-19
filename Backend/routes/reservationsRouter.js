@@ -1,22 +1,25 @@
 import express from "express";
-import {createReservation, deleteReservation, readReservation, updateReservation } from "../controllers/reservationsController.js";
+import {
+  createReservation,
+  deleteReservation,
+  readReservation,
+  updateReservation,
+} from "../controllers/reservationsController.js";
 
-const reservationsRouter = express.Router()
+const reservationsRouter = express.Router();
 
-reservationsRouter.post("/", (req, res) =>{
-    createReservation(req, res)
-})
+reservationsRouter.post("/", (req, res) => {
+  createReservation(req, res);
+});
 
-reservationsRouter.get("/:idReserv", (req, res) =>{
-    readReservation(req, res)
-})
+reservationsRouter.get("/", readReservation);
 
-reservationsRouter.put("/:idReserv", (req, res) =>{
-    updateReservation(req, res)
-})
+reservationsRouter.put("/:idReserv", (req, res) => {
+  updateReservation(req, res);
+});
 
-reservationsRouter.delete("/:idReserv", (req, res) =>{
-    deleteReservation(req, res)
-})
+reservationsRouter.delete("/:idReserv", (req, res) => {
+  deleteReservation(req, res);
+});
 
 export default reservationsRouter;

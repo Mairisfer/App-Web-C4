@@ -1,5 +1,5 @@
 export async function getTransactions(token) {
-  const res = await fetch("http://localhost:8089/api/transaction/", {
+  const res = await fetch("http://localhost:8089/api/reservations", {
     headers: {
       token: token,
     },
