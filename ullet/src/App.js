@@ -42,7 +42,7 @@ function App() {
         }
       />
       <Route
-        path="/registro"
+        path="/register"
         element={
           <TokenProvider>
             <UserProvider>

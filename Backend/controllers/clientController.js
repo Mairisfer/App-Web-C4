@@ -7,7 +7,7 @@ export async function createClient(req, res) {
     const { username } = req.body;
     let { password } = username;
 
-    password = await bcrypt.hash(password, 10);
+    password = await bcrypt.hash(password, 7);
     username.password = password;
 
     const document = await clientModel.create(username);
@@ -18,7 +18,23 @@ export async function createClient(req, res) {
   }
 }
 
-export function readClient(req, res) {}
+export async function readClient(req, res) {
+  const { username } = req;
+  let documento;
+
+  try {
+    documento = await clientModel.findOne({
+      username: username,
+    });
+  } catch (error) {
+    res.status(400);
+    res.json(error.message);
+    return;
+  }
+
+  res.status(200);
+  res.json(documento);
+}
 
 export function updateClient(req, res) {}
 
