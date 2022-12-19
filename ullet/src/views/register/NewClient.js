@@ -27,7 +27,10 @@ function Login() {
         </form>
         <div className="register card">
           <p>
-            ¿Ya tienes cuenta? <Link to="/login">Inicia Sesión</Link>
+            ¿Ya tienes cuenta?{" "}
+            <Link to="/login">
+              <b>Inicia Sesión</b>
+            </Link>
           </p>
         </div>
       </div>
