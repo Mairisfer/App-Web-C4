@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { useCookies } from "react-cookie";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../assets/Logo";
 import Boton from "../../components/forms/Boton";
@@ -14,6 +15,7 @@ function Login() {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [cookies, setCookie] = useCookies(["token", "userName"]);
 
   const navigate = useNavigate();
 
@@ -25,8 +27,10 @@ function Login() {
 
     if (token) {
       setToken(token);
+      setCookie("token", token, "/");
       setUser({ name: username });
-      navigate("/clients");
+      setCookie("username", username);
+      navigate("/reservations");
     } else {
       alert("Password incorrecto");
     }

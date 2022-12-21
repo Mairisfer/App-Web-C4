@@ -6,7 +6,7 @@
 .menu {
   list-style: none;
   align-items: center;
-  gap: 1rem;
+  gap: 8rem;
 }
 
 .menu li:last-child {

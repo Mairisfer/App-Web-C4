@@ -6,13 +6,12 @@ import Navbar from "./components/ui/Navbar";
 import NavbarLog from "./components/ui/NavbarLog";
 import { TokenProvider } from "./contexts/TokenContext";
 import { UserProvider } from "./contexts/UserContext";
+import { CookiesProvider } from "react-cookie";
 //import Boton from "./components/forms/Boton";
 import Home from "./views/home/Home";
 import Login from "./views/login/Login";
 import NewClient from "./views/register/NewClient";
-
 import ClientPanel from "./views/panel/ClientPanel";
-
 import BoxesPanel from "./views/boxes/Boxes";
 //import ClientPanel from "./views/panel/ClientPanel";
 
@@ -22,21 +21,25 @@ function App() {
     <Routes>
       <Route element={<Navbar />}>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<h1 className="container">About</h1>} />
       </Route>
 
       <Route
         path="/login"
         element={
-          <TokenProvider>
-            <UserProvider>
-              <Login />
-            </UserProvider>
-          </TokenProvider>
+          <CookiesProvider>
+            <TokenProvider>
+              <UserProvider>
+                <Login />
+              </UserProvider>
+            </TokenProvider>
+          </CookiesProvider>
         }
-      ></Route>
+      />
+
       <Route element={<NavbarLog />}>
         <Route
-          path="/clients"
+          path="/reservations"
           element={
             <TokenProvider>
               <UserProvider>
@@ -50,32 +53,38 @@ function App() {
         <Route
           path="/boxes"
           element={
-            <TokenProvider>
-              <UserProvider>
-                <BoxesPanel />
-              </UserProvider>
-            </TokenProvider>
+            <CookiesProvider>
+              <TokenProvider>
+                <UserProvider>
+                  <BoxesPanel />
+                </UserProvider>
+              </TokenProvider>
+            </CookiesProvider>
           }
         />
       </Route>
       <Route
         path="/clients"
         element={
-          <TokenProvider>
-            <UserProvider>
-              <ClientPanel />
-            </UserProvider>
-          </TokenProvider>
+          <CookiesProvider>
+            <TokenProvider>
+              <UserProvider>
+                <BoxesPanel />
+              </UserProvider>
+            </TokenProvider>
+          </CookiesProvider>
         }
       />
       <Route
         path="/register"
         element={
-          <TokenProvider>
-            <UserProvider>
-              <NewClient />
-            </UserProvider>
-          </TokenProvider>
+          <CookiesProvider>
+            <TokenProvider>
+              <UserProvider>
+                <BoxesPanel />
+              </UserProvider>
+            </TokenProvider>
+          </CookiesProvider>
         }
       />
     </Routes>

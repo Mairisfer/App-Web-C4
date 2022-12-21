@@ -20,9 +20,11 @@ function BoxesPanel() {
   return (
     <section className="user-panel">
       <div className="container">
+        <h2>Nuestros Palcos</h2>
         <div className="balance card flex">
-          <h1>Palcos:</h1>
-          <p>Bienvenido</p>
+          <h3>
+            Esta es la lista de los mejores lugares a los que puedes acceder
+          </h3>
         </div>
 
         <div className="transactions card">

@@ -1,11 +1,11 @@
 .user-panel .balance {
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 2rem;
+  margin-bottom: 0.2rem;
 }
 
 .user-panel .balance p {
-  font-size: 32px;
+  font-size: 22px;
 }
 
 .transactions {
@@ -15,18 +15,17 @@
 
 .transaction {
   background-color: rgb(204, 195, 182);
-  padding: 1rem;
-  border-radius: var(--default-radius);
-
-  grid-template-columns: 1fr 1fr;
-
+  padding: 0.8rem;
+  border-radius: 20px;
+  grid-template-columns: 0.8fr 1fr;
   width: 70%;
 }
 
 .transaction .from {
   color: var(--main-color);
-  font-weight: 500;
   font-size: 18px;
+  padding: 1rem;
+  border-radius: var(--default-radius);
 }
 
 .transaction .positive-value {

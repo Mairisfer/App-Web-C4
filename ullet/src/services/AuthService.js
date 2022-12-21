@@ -14,3 +14,26 @@ export async function login(username, password) {
     return null;
   }
 }
+
+export async function register(username, password) {
+  const data = {
+    user: {
+      username: username,
+      password: password,
+    },
+  };
+
+  const res = await fetch("http://localhost:8089/api/register", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+  if (res.ok) {
+    const document = await res.json();
+    return document;
+  } else {
+    return null;
+  }
+}

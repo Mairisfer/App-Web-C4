@@ -8,11 +8,28 @@ function ShowPalcos(props) {
 
   return (
     <div className="transaction grid">
-      <p className="from">Id Palco : {idBox}</p>
-      <p className="date">Capacidad : {capacity}</p>
-      <p className="date">Descripción : {description}</p>
-      <p className="date">Locación : {location}</p>
-      <p className="date">Categoria : {category}</p>
+      <h3 className="from">
+        <b>Id Palco : </b>
+        {idBox}
+      </h3>
+      <div>
+        <p className="date">
+          <b>Capacidad : </b>
+          {capacity}
+        </p>
+        <p className="date">
+          <b>Descripción : </b>
+          {description}
+        </p>
+        <p className="date">
+          <b>Locación : </b>
+          {location}
+        </p>
+        <p className="date">
+          <b>Categoria : </b>
+          {category}
+        </p>
+      </div>
     </div>
   );
 }

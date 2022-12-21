@@ -6,7 +6,6 @@ function GridColum(props) {
   const style = {
     gridColumn: column,
     gridRow: row,
-
   };
 
   return (

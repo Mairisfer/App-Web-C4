@@ -1,12 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/Logo";
 import Boton from "../../components/forms/Boton.js";
 import Input from "../../components/forms/Input";
+import { register } from "../../services/AuthService";
 
 import "./NewClient.css";
 
 function Login() {
+  const [userInput, setUserInput] = useState("");
+  const [passwordInput, setPasswordInput] = useState("");
+  const [confirmPasswordInput, setConfirmPasswordInput] = useState("");
+
+  async function onButtonClick(event) {
+    event.preventDefault();
+
+    if (passwordInput !== confirmPasswordInput) {
+      return alert("las contraseñas no coinciden");
+    }
+
+    const res = await register(userInput, passwordInput);
+    console.log(res);
+  }
+
   return (
     <section className="login">
       <div className="container">
@@ -18,12 +34,22 @@ function Login() {
         </h1>
         <form className="flex card form">
           <Input>Nombre</Input>
-          <Input>UserName</Input>
-          <Input type="password">Contraseña</Input>
-          <Input type="password">Confirmar Contraseña</Input>
+          <Input onChange={(e) => setUserInput(e.target.value)}>UserName</Input>
+          <Input
+            type="password"
+            onChange={(e) => setPasswordInput(e.target.value)}
+          >
+            Contraseña
+          </Input>
+          <Input
+            type="password"
+            onChange={(e) => setConfirmPasswordInput(e.target.value)}
+          >
+            Confirmar Contraseña
+          </Input>
           <Input>Email</Input>
           <Input>Edad</Input>
-          <Boton style="fill">Registrarme</Boton>
+          <Boton onClick={onButtonClick} style="fill">Registrarme</Boton>
         </form>
         <div className="register card">
           <p>
