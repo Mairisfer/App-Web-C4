@@ -30,7 +30,7 @@ function Login() {
       setCookie("token", token, "/");
       setUser({ name: username });
       setCookie("username", username);
-      navigate("/reservations");
+      navigate("/clientPanel");
     } else {
       alert("Password incorrecto");
     }
