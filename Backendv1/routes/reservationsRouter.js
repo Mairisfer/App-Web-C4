@@ -14,12 +14,12 @@ reservationsRouter.post("/", (req, res) => {
 
 reservationsRouter.get("/", readReservation);
 
-reservationsRouter.put("/:idReserv", (req, res) => {
+/*reservationsRouter.put("/:idReserv", (req, res) => {
   updateReservation(req, res);
 });
 
 reservationsRouter.delete("/:idReserv", (req, res) => {
   deleteReservation(req, res);
-});
+});*/
 
 export default reservationsRouter;
