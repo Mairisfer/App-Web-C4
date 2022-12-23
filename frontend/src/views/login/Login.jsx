@@ -21,8 +21,6 @@ function Login() {
 
   async function onButtonClick(event) {
     event.preventDefault();
-    console.log(username);
-    console.log(password);
     const token = await login(username, password);
 
     if (token) {
@@ -30,7 +28,7 @@ function Login() {
       setCookie("token", token, "/");
       setUser({ name: username });
       setCookie("username", username);
-      navigate("/clientPanel");
+      navigate("/clients");
     } else {
       alert("Password incorrecto");
     }

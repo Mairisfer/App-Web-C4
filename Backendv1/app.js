@@ -43,4 +43,3 @@ app.use("/client", clientRouter);
 app.use("/reservations", reservationsRouter);
 app.use("/boxes", boxesRouter);
 app.use("/score", scoreRouter);
-
