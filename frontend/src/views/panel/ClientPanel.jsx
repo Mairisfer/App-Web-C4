@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 function ClientPanel() {
   async function fetchData() {
-    const res = await fetch("http://localhost:8089/api/reservations");
+    const res = await fetch(API_URL + "/ api/login/");
     const documents = await res.json();
 
     setDocuments(documents);

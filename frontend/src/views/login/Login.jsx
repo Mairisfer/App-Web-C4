@@ -19,10 +19,6 @@ function Login() {
 
   const navigate = useNavigate();
 
-  /*useEffect(() => {
-    if (cookies.token) return navigate("/");
-  }, {});*/
-
   async function onButtonClick(event) {
     event.preventDefault();
     //console.log(username);
@@ -94,39 +90,3 @@ function Login() {
 }
 
 export default Login;
-
-/*sync function onSubmit(evento) {
-    evento.preventDefault();
-    /*alert("Estas iniciando sesión con las siguientes credenciales. User: "+user+", Password: " 
-      + password);
-
-    const res = await fetch("http://localhost:8089/login", {
-      method: "GET",
-      mode: "cors",
-      headers: {
-        username: username,
-        password: password,
-      },
-    });
-
-    if (res.ok) {
-      const data = await res.json();
-      alert("Usa este token para ingresar:" + data.token);
-    } else {
-      alert(res.status);
-    }
-  }
-
-  const [username, setUsername] = useState("");
-
-  function onUsernameChange(e) {
-    setUsername(e.target.value);
-    //console.log(username);
-  }
-
-  const [password, setPassword] = useState("");
-
-    function onPasswordChange(e) {
-      setPassword(e.target.value);      
-    }
-  */

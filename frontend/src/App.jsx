@@ -7,13 +7,12 @@ import NavbarLog from "./components/ui/NavbarLog";
 import { TokenProvider } from "./contexts/TokenContext";
 import { UserProvider } from "./contexts/UserContext";
 import { CookiesProvider } from "react-cookie";
-//import Boton from "./components/forms/Boton";
+
 import Home from "./views/home/Home";
 import Login from "./views/login/Login";
 import NewClient from "./views/register/NewClient";
 import ClientPanel from "./views/panel/ClientPanel";
 import BoxesPanel from "./views/boxes/Boxes";
-//import ClientPanel from "./views/panel/ClientPanel";
 
 function App() {
   //const [view, setView] = useState(<Home></Home>);

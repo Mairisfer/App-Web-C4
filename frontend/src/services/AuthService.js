@@ -1,7 +1,7 @@
 import { API_URL } from "./api";
 
 export async function login(username, password) {
-  const res = await fetch(API_URL + "/api/login/", {
+  const res = await fetch("http://localhost:5173/api/login", {
     headers: {
       username: username,
       password: password,

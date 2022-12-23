@@ -18,22 +18,21 @@ app.listen(port, () => {
   console.log(`servidor Levantado ${port}`);
 });
 
+const uri = process.env.URI;
+
 mongoose.set("strictQuery", true);
 
-mongoose.connect(
-  "mongodb+srv://DBAppBoxes:usuario@dbappboxes.ozqotmo.mongodb.net/boxes-app?retryWrites=true&w=majority",
-  (err) => {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log("Se ha conectado a la base de datos.");
-    }
+mongoose.connect(uri, (err) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log("Se ha conectado a la base de datos.");
   }
-);
+});
 
 app.use(
   cors({
-    origin: "https://tupalco.onrender.com",
+    origin: process.env.ORIGIN,
   })
 );
 
@@ -45,16 +44,3 @@ app.use("/reservations", reservationsRouter);
 app.use("/boxes", boxesRouter);
 app.use("/score", scoreRouter);
 
-/*
-app.use('/score', scoreRouter)
-app.use(express.urlencoded({extended: true}))
-app.use(express.json())
-
-
-app.use('/score', scoreRouter)
-
-app.use('/client', clientRouter)
-
-
-app.use("/test", testRouter)
-*/

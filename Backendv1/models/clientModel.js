@@ -33,5 +33,3 @@ function validacionNeg(v) {
 }
 
 export default mongoose.model("clients", userShema);
-//Establecer fecha (en el Schema) "date": { type: Date, default: Date.now(), inmutable:true },
-// "id": { type: String, default: () => genKey(6), set: () => genKey(6), inmutable: true},*/
