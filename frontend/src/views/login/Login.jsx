@@ -21,8 +21,8 @@ function Login() {
 
   async function onButtonClick(event) {
     event.preventDefault();
-    //console.log(username);
-    //console.log(password);
+    console.log(username);
+    console.log(password);
     const token = await login(username, password);
 
     if (token) {
@@ -37,10 +37,9 @@ function Login() {
   }
 
   async function comeBackButton(event) {
-  event.preventDefault();       
-  navigate("/");
-  } 
-    
+    event.preventDefault();
+    navigate("/");
+  }
 
   return (
     <section className="login">

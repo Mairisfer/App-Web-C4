@@ -15,7 +15,6 @@ import ClientPanel from "./views/panel/ClientPanel";
 import BoxesPanel from "./views/boxes/Boxes";
 
 function App() {
-  //const [view, setView] = useState(<Home></Home>);
   return (
     <Routes>
       <Route element={<Navbar />}>
@@ -80,7 +79,7 @@ function App() {
           <CookiesProvider>
             <TokenProvider>
               <UserProvider>
-                <NewClient/>
+                <NewClient />
               </UserProvider>
             </TokenProvider>
           </CookiesProvider>
