@@ -1,13 +1,10 @@
 import React from "react";
-//import { useCookies } from "react-cookie";
-//import UserContext from "../../contexts/UserContext";
 
 import "./ClientPanel.css";
 
 function Transaction(props) {
   const { data } = props;
   const { idReserv, dateReserv, dateRequest, status } = data;
-  //const [cookies, setCookies] = useCookies(["userName"])
 
   return (
     <div className="transaction grid">

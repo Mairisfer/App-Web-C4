@@ -15,7 +15,7 @@ function NavbarLog() {
             </Link>
           </li>
           <li>
-            <Link to="/clients">
+            <Link to="/reservations">
               <b>Reservaciones</b>
             </Link>
           </li>
@@ -24,16 +24,7 @@ function NavbarLog() {
               <b>Palcos</b>
             </Link>
           </li>
-          {/*<li>
-            <Link to="/clients">
-              <b>Clientes</b>
-            </Link>
-          </li>
-          <li>
-            <Link to="/clients/new">
-              <b>Nuevo Cliente</b>
-            </Link>
-          </li>*/}
+
           <li>
             <Link to="/login">
               <Boton style="wire">Log Out</Boton>

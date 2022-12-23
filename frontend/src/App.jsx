@@ -13,6 +13,7 @@ import Login from "./views/login/Login";
 import NewClient from "./views/register/NewClient";
 import ClientPanel from "./views/panel/ClientPanel";
 import BoxesPanel from "./views/boxes/Boxes";
+import Transaction from "./views/panel/Transaction";
 
 function App() {
   return (
@@ -41,7 +42,7 @@ function App() {
           element={
             <TokenProvider>
               <UserProvider>
-                <ClientPanel />
+                <Transaction />
               </UserProvider>
             </TokenProvider>
           }

@@ -14,26 +14,8 @@ function Navbar() {
               <Logo size="55px" showText={true} />
             </Link>
           </li>
-          {/*<li>
-            <Link to="/">
-              <b>Home</b>
-            </Link>
-          </li>
-          <li>
-            <Link to="/login">
-              <b>Login</b>
-            </Link>
-          </li>
-          <li>
-            <Link to="/clients">
-              <b>Clientes</b>
-            </Link>
-          </li>
-          <li>
-            <Link to="/clients/new">
-              <b>Nuevo Cliente</b>
-            </Link>
-          </li>*/}
+          
+          
           <li>
             <Link to="/login">
               <Boton style="wire">Ingresar</Boton>
