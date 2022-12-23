@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../assets/Logo";
@@ -19,6 +19,10 @@ function Login() {
 
   const navigate = useNavigate();
 
+  /*useEffect(() => {
+    if (cookies.token) return navigate("/");
+  }, {});*/
+
   async function onButtonClick(event) {
     event.preventDefault();
     //console.log(username);
@@ -35,6 +39,12 @@ function Login() {
       alert("Password incorrecto");
     }
   }
+
+  async function comeBackButton(event) {
+  event.preventDefault();       
+  navigate("/");
+  } 
+    
 
   return (
     <section className="login">
@@ -70,6 +80,12 @@ function Login() {
             <Link to="/register">
               <b>Crea una cuenta</b>
             </Link>
+            <br></br>
+            <br></br>
+            <br></br>
+            <Boton onClick={comeBackButton} style="wire">
+              Home
+            </Boton>
           </p>
         </div>
       </div>

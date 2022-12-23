@@ -6,6 +6,9 @@ export async function login(req, res) {
   try {
     const { username, password } = req.headers;
 
+    console.log(username);
+    console.log(password)
+
     const document = await clientModel.findOne({ username: username });
 
     const access = await bcrypt.compare(password, document.password);

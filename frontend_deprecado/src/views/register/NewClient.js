@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../assets/Logo";
 import Boton from "../../components/forms/Boton.js";
 import Input from "../../components/forms/Input";
@@ -11,6 +11,7 @@ function Login() {
   const [userInput, setUserInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
   const [confirmPasswordInput, setConfirmPasswordInput] = useState("");
+  const navigate = useNavigate();
 
   async function onButtonClick(event) {
     event.preventDefault();
@@ -22,6 +23,11 @@ function Login() {
     const res = await register(userInput, passwordInput);
     console.log(res);
   }
+
+  async function comeBackButton(event) {
+    event.preventDefault();
+    navigate("/");
+  } 
 
   return (
     <section className="login">
@@ -57,6 +63,12 @@ function Login() {
             <Link to="/login">
               <b>Inicia Sesión</b>
             </Link>
+            <br></br>
+            <br></br>
+            <br></br>
+            <Boton onClick={comeBackButton} style="wire">
+              Home
+            </Boton>
           </p>
         </div>
       </div>

@@ -69,7 +69,7 @@ function App() {
           <CookiesProvider>
             <TokenProvider>
               <UserProvider>
-                <BoxesPanel />
+                <ClientPanel />
               </UserProvider>
             </TokenProvider>
           </CookiesProvider>
@@ -81,7 +81,7 @@ function App() {
           <CookiesProvider>
             <TokenProvider>
               <UserProvider>
-                <BoxesPanel />
+                <NewClient/>
               </UserProvider>
             </TokenProvider>
           </CookiesProvider>
