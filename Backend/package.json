@@ -4,7 +4,9 @@
   "description": "Aplicación web para reserva de Palcos",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "build": "npm install",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",

@@ -33,7 +33,7 @@ mongoose.connect(
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://tupalco.onrender.com",
   })
 );
 
